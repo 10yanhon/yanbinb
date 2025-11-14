@@ -3,230 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>福瑞风采紫色主题升级版</title>
+    <title>紫色云端 · 个性化主题页</title>
 
     <style>
-        /* ------------------------------------------------------ */
-        /* 🟣 全站紫色主题变量（升级版） */
-        /* ------------------------------------------------------ */
-        :root {
-            --primary: #6a1b9a;        /* 主紫色 */
-            --primary-light: #9c4dcc;  /* 亮紫 */
-            --primary-dark: #4a148c;   /* 深紫 */
-            --secondary: #b388ff;      /* 辅助亮紫 */
-            --accent: linear-gradient(135deg, #c084fc 0%, #7c3aed 50%, #a78bfa 100%);
-            --bg: #f3e5f5;            /* 背景淡紫 */
-            --white: #ffffff;
-            --text-dark: #2b2b2b;
-            --glass: rgba(255, 255, 255, 0.2);
-            --glass-border: rgba(255, 255, 255, 0.3);
-            --shadow: 0 10px 25px rgba(106, 27, 154, 0.18);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-        }
-
         body {
-            background: linear-gradient(135deg, #f3e5f5, #ede7f6);
-            color: var(--text-dark);
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #f8f3ff, #ece0ff);
+            color: #3a2a4f;
         }
 
-        /* ------------------------------------------------------ */
-        /* 🟣 顶部导航（紫色渐变 + 毛玻璃） */
-        /* ------------------------------------------------------ */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            background: rgba(255,255,255,0.25);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
-            box-shadow: var(--shadow);
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            background: var(--accent);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: var(--primary-dark);
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-light);
-        }
-
-        /* ------------------------------------------------------ */
-        /* 🟣 Hero 部分 - 大型紫色渐变背景 */
-        /* ------------------------------------------------------ */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 50px;
+        header {
             text-align: center;
-            background: var(--accent);
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #9c4dcc, #7c3aed, #c084fc);
             color: white;
-            position: relative;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 30px rgba(255, 255, 255, 0.4);
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 30px rgba(255,255,255,0.35);
         }
 
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 700px;
-            margin: auto;
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
         }
 
-        /* ------------------------------------------------------ */
-        /* 🟣 按钮（高级玻璃紫色按钮） */
-        /* ------------------------------------------------------ */
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            margin-top: 20px;
-            font-size: 1.1rem;
-            border-radius: 12px;
-            text-decoration: none;
-            background: var(--white);
-            color: var(--primary-dark);
-            font-weight: bold;
-            box-shadow: var(--shadow);
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-4px);
-            color: var(--primary-light);
-        }
-
-        /* ------------------------------------------------------ */
-        /* 🟣 章节标题 */
-        /* ------------------------------------------------------ */
-        h2.section-title {
-            text-align: center;
-            font-size: 2.4rem;
-            margin: 80px 0 40px;
-            background: var(--accent);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        /* ------------------------------------------------------ */
-        /* 🟣 内容卡片（玻璃紫 + 阴影） */
-        /* ------------------------------------------------------ */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            padding: 0 50px;
-            gap: 30px;
-            margin-bottom: 80px;
+        section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
         .card {
-            padding: 25px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
+            background: rgba(255,255,255,0.45);
             backdrop-filter: blur(14px);
-            box-shadow: var(--shadow);
-            transition: 0.3s;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-        }
-
-        /* ------------------------------------------------------ */
-        /* 🟣 页脚 */
-        /* ------------------------------------------------------ */
         footer {
-            background: var(--primary-dark);
-            color: white;
             text-align: center;
             padding: 25px;
-            margin-top: 40px;
+            margin-top: 50px;
+            background: #4a148c;
+            color: white;
+            font-size: 0.95rem;
         }
-
     </style>
 </head>
 
 <body>
 
-    <!-- 🟣 顶部导航 -->
-    <nav>
-        <div class="logo">福瑞风采俱乐部</div>
-        <ul>
-            <li><a href="#about">关于我们</a></li>
-            <li><a href="#mission">使命</a></li>
-            <li><a href="#activities">活动</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>在紫色的云端，我写下属于自己的诗</h1>
+        <p>轻柔的风带来希望，光穿过云隙落在你身上。</p>
+    </header>
 
-    <!-- 🟣 Hero -->
-    <section class="hero">
-        <div>
-            <h1>在紫色的云端，我写下属于自己的诗</h1>
-            <p>在紫色的云端，我写下属于自己的诗</p>
-            <a href="#about" class="btn">了解更多</a>
+    <section>
+        <div class="card">
+            在浅浅的紫色天光下，世界变得安静、柔软、温柔起来。
+            每一步落在地面上，都像在云端上轻轻印下一笔。
+        </div>
+
+        <div class="card">
+            如果你愿意停下来听一听，你会听到风穿过山谷的声音，
+            也会听到自己的心跳——那么清晰，那么真实。
+        </div>
+
+        <div class="card">
+            这不仅是一页网页，而是一段属于你的时光。
+            它可以是一首诗，也可以是一幅风景。
+            你看到什么，它便是什么。
         </div>
     </section>
 
-    <!-- 🟣 关于 -->
-    <h2 class="section-title" id="about">关于我们</h2>
-    <div class="card-grid">
-        <div class="card">福瑞风采俱乐部为兽爱者提供一个友善、舒适、具有归属感的交流环境。</div>
-        <div class="card">我们组织线上与线下活动，促进成员之间的交流与支持。</div>
-        <div class="card">我们致力于让更多人理解并欣赏福瑞文化之美。</div>
-    </div>
-
-    <!-- 🟣 使命愿景 -->
-    <h2 class="section-title" id="mission">俱乐部使命</h2>
-    <div class="card-grid">
-        <div class="card">传播健康积极的福瑞文化。</div>
-        <div class="card">构建安全、包容的交流社区。</div>
-        <div class="card">提供支持与资源，让每位成员都能找到自己的位置。</div>
-    </div>
-
-    <!-- 🟣 活动展示 -->
-    <h2 class="section-title" id="activities">俱乐部活动</h2>
-    <div class="card-grid">
-        <div class="card">线上语音交流与主题聊天。</div>
-        <div class="card">线下聚会与文化交流活动。</div>
-        <div class="card">创作展示、故事分享、艺术交流。</div>
-    </div>
-
-    <!-- 🟣 页脚 -->
     <footer>
-        福瑞风采 © 2025 · 紫色主题优化版
+        ✦ Purple Theme © 2025 · 个性化主题页 ✦
     </footer>
 
 </body>
