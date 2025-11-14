@@ -1,120 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth (Purple Theme & Glassmorphism)</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Network - Protect Earth (Purple Edition)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* --------------------------
-           Variables & global
-        --------------------------*/
-        :root{
-            --bg: #f3e5f5;
-            --primary: #6a1b9a;
-            --secondary: #8e24aa;
-            --accent: linear-gradient(135deg,#c084fc 0%, #7c3aed 50%, #a78bfa 100%);
-            --glass-bg: rgba(255,255,255,0.12);
-            --glass-border: rgba(255,255,255,0.18);
-            --card-bg: rgba(255,255,255,0.06);
-            --text: #2b2b2b;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(106,27,154,0.12);
+        /* =========================================================
+           GLOBAL THEME — Elegant Lavender Purple
+        ========================================================= */
+        :root {
+            --bg: #f4e8ff; /* 柔紫背景 */
+            --primary: #7b1fa2;  /* 主紫色 */
+            --secondary: #9c27b0; /* 辅助深紫 */
+            --text-dark: #2b2335;
+            --text-light: #ffffff;
+
+            /* 高级渐变紫色 */
+            --gradient-main: linear-gradient(135deg, #c084fc 0%, #8b5cf6 50%, #a78bfa 100%);
+
+            /* 玻璃拟态 */
+            --glass-bg: rgba(255, 255, 255, .12);
+            --glass-border: rgba(255, 255, 255, .2);
+
+            --shadow: 0 10px 30px rgba(123, 31, 162, .15);
         }
 
-        *{box-sizing:border-box;margin:0;padding:0;font-family:Inter, 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial}
-        html,body{height:100%}
-        body{background:radial-gradient(circle at 10% 10%, rgba(122,77,169,0.06), transparent 10%), var(--bg);color:var(--text);line-height:1.6;}
-
-        /* prefers-reduced-motion */
-        @media (prefers-reduced-motion: reduce){
-            *{animation:none;transition:none}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", system-ui, sans-serif;
         }
 
-        .container{width:92%;max-width:1200px;margin:0 auto}
+        body {
+            background: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-        /* --------------------------
-           Header / Nav
-        --------------------------*/
-        header{position:sticky;top:0;z-index:40;padding:.9rem 0;background:linear-gradient(90deg,var(--primary),var(--secondary));color:var(--white);backdrop-filter: blur(6px);box-shadow:0 6px 18px rgba(74,20,140,0.08)}
-        .nav{display:flex;align-items:center;justify-content:space-between}
-        .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.25rem}
-        .logo i{font-size:1.5rem}
-        nav ul{display:flex;gap:1.2rem;list-style:none}
-        nav a{color:var(--white);text-decoration:none;font-weight:600;padding:.4rem .2rem;border-radius:6px}
-        nav a:hover{background:rgba(255,255,255,0.06)}
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-        .mobile-menu{display:none}
+        /* =========================================================
+           HEADER
+        ========================================================= */
+        header {
+            position: sticky;
+            top: 0;
+            padding: 1rem 0;
+            background: var(--gradient-main);
+            color: var(--text-light);
+            z-index: 20;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(80, 0, 120, 0.15);
+        }
 
-        /* --------------------------
-           Hero with parallax background
-        --------------------------*/
-        .hero{position:relative;height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);overflow:hidden}
-        .hero__bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1800&q=60');background-size:cover;background-position:center center;transform:translateZ(0);will-change:transform;filter:brightness(0.55);}
-        /* layered purple gradient overlay */
-        .hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg, rgba(122,77,169,0.6), rgba(124,58,237,0.45) 50%, rgba(167,139,250,0.28));mix-blend-mode:overlay}
-        .hero__content{position:relative;z-index:4;max-width:900px;padding:2rem;border-radius:14px}
-        .hero h1{font-size:clamp(2rem,4vw,3.8rem);line-height:1.02;margin-bottom:.6rem;text-shadow:0 8px 30px rgba(74,20,140,0.35)}
-        .hero p{font-size:clamp(1rem,1.6vw,1.25rem);margin-bottom:1rem;opacity:.95}
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        /* glass CTA */
-        .hero .btn{background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter: blur(6px);color:var(--white);padding:.7rem 1.6rem;border-radius:999px;box-shadow:var(--shadow);display:inline-flex;align-items:center;gap:.6rem}
-        .hero .btn i{transform:translateY(-1px)}
-        .hero .btn:hover{transform:translateY(-4px) scale(1.02)}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.4rem;
+        }
 
-        /* --------------------------
-           Sections
-        --------------------------*/
-        section{padding:4.2rem 0}
-        .section-title{text-align:center;margin-bottom:2.2rem}
-        .section-title h2{color:var(--primary);font-size:1.9rem;display:inline-block;position:relative}
-        .section-title p{max-width:720px;margin:0.6rem auto;color:#40364a}
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 10px;
+            border-radius: 6px;
+        }
 
-        /* about */
-        .about{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
-        .about-img{border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
-        .about-img img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .7s ease}
-        .about-img:hover img{transform:scale(1.06)}
-        .about-text h3{font-size:1.45rem;color:var(--dark)}
+        nav a:hover {
+            background: rgba(255, 255, 255, .18);
+        }
 
-        /* stats */
-        .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.6rem}
-        .stat{background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.82));border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 8px 24px rgba(99,102,241,0.06);border:1px solid rgba(122,77,169,0.06)}
-        .stat i{font-size:1.6rem;color:var(--primary);margin-bottom:.4rem}
-        .stat h3{font-size:1.6rem}
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
 
-        /* initiatives - glass cards with gradient accents */
-        .initiatives-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-        .card{border-radius:12px;overflow:hidden;position:relative;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(8px);box-shadow:0 12px 28px rgba(75,0,130,0.08);transition:transform .45s ease}
-        .card:hover{transform:translateY(-14px)}
-        .card .img-wrap{height:200px;overflow:hidden}
-        .card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-        .card:hover img{transform:scale(1.08)}
-        .card .content{padding:1.1rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.03))}
-        .card .content h3{margin-bottom:.6rem;color:var(--dark)}
-        .tag{position:absolute;top:12px;left:12px;padding:.25rem .6rem;border-radius:999px;background:linear-gradient(90deg,#c084fc,#7c3aed);color:#fff;font-weight:700;font-size:.75rem;box-shadow:0 6px 18px rgba(124,58,237,0.18)}
+        /* =========================================================
+           HERO SECTION — Parallax + Glassmorphism
+        ========================================================= */
+        .hero {
+            height: 78vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
 
-        /* CTA */
-        .cta{border-radius:14px;padding:3rem 1.2rem;color:var(--white);background:linear-gradient(135deg,#7c3aed 0%, #c084fc 60%);text-align:center}
-        .cta .btn{background:var(--white);color:#6b21a8;padding:.8rem 1.6rem;border-radius:999px;font-weight:700}
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=2000&q=60');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.55);
+            transition: transform 0.2s linear;
+        }
 
-        /* footer */
-        footer{padding:2.4rem 0;background:linear-gradient(180deg,#4a148c,#2e0a45);color:#fff}
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(125deg, rgba(140, 90, 220, .65), rgba(90, 40, 180, .4));
+        }
 
-        /* responsiveness */
-        @media (max-width:1000px){.about{grid-template-columns:1fr}.initiatives-grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)} }
-        @media (max-width:680px){nav ul{display:none}.mobile-menu{display:block}.initiatives-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr} .hero{height:62vh}.hero h1{font-size:1.8rem}}
+        .hero__content {
+            position: relative;
+            z-index: 5;
+            max-width: 800px;
+            padding: 1.5rem;
+            border-radius: 14px;
+        }
 
-        /* small helpers */
-        .flex{display:flex;align-items:center;gap:.6rem}
-        .muted{color:#6c547a}
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 0 8px 30px rgba(85, 30, 160, 0.5);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .8rem 1.6rem;
+            background: var(--glass-bg);
+            color: white;
+            border: 1px solid var(--glass-border);
+            border-radius: 1000px;
+            backdrop-filter: blur(6px);
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: .35s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+        section { padding: 4rem 0; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.2rem;
+        }
+
+        .section-title h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: .4rem;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            transition: transform .6s ease;
+        }
+
+        .about-img img:hover {
+            transform: scale(1.06);
+        }
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.4rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,.75);
+            box-shadow: var(--shadow);
+        }
+
+        .stat i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: .4rem;
+        }
+
+        /* =========================================================
+           INITIATIVES — Glass Cards
+        ========================================================= */
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            border-radius: 14px;
+            overflow: hidden;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.15);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: transform .4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: .5s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: .25rem .6rem;
+            font-size: .75rem;
+            border-radius: 100px;
+            background: var(--gradient-main);
+            color: white;
+            font-weight: 600;
+        }
+
+        .card .content { padding: 1.2rem; }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+        .cta {
+            text-align: center;
+            color: white;
+            padding: 3rem 1.2rem;
+            border-radius: 14px;
+            background: var(--gradient-main);
+            box-shadow: var(--shadow);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+        footer {
+            background: linear-gradient(180deg, #5a1a85, #311255);
+            color: white;
+            padding: 2.5rem 0;
+        }
+
+        footer a { color: white; }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+        @media (max-width: 900px) {
+            .about {
+                grid-template-columns: 1fr;
+            }
+        }
 
     </style>
 </head>
+
 <body>
+
+    <!-- HEADER -->
     <header>
         <div class="container nav">
-            <div class="logo"><i class="fas fa-seedling"></i><span>Green Network</span></div>
+            <div class="logo"><i class="fas fa-leaf"></i> Green Network</div>
             <nav>
                 <div class="mobile-menu"><i class="fas fa-bars"></i></div>
                 <ul>
@@ -128,14 +313,14 @@
         </div>
     </header>
 
-    <!-- HERO with parallax -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero__bg" id="heroBg"></div>
         <div class="hero__overlay"></div>
         <div class="container hero__content">
             <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a class="btn" href="#get-involved"><i class="fas fa-hand-holding-seedling"></i> Join Our Network</a>
+            <p>Join our global movement to take sustainable action for the Earth.</p>
+            <a class="btn" href="#get-involved"><i class="fas fa-seedling"></i> Join Now</a>
         </div>
     </section>
 
@@ -143,90 +328,83 @@
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+                <h2>About Us</h2>
+                <p>We are a global community committed to environmental protection.</p>
             </div>
+
             <div class="about">
                 <div class="about-img">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=1600&q=60" alt="Team planting trees">
+                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=1600&q=60" alt="">
                 </div>
-                <div class="about-text">
+                <div>
                     <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a class="btn" href="#">Learn More</a>
+                    <p>We promote ecosystem protection, renewable energy, and global climate action.</p>
+                    <a class="btn">Learn More</a>
                 </div>
             </div>
 
-            <div class="stats" aria-hidden="false">
+            <div class="stats">
                 <div class="stat">
                     <i class="fas fa-tree"></i>
                     <h3 class="counter" data-target="2500000">0</h3>
-                    <p class="muted">Trees Planted</p>
+                    <p>Trees Planted</p>
                 </div>
+
                 <div class="stat">
                     <i class="fas fa-users"></i>
                     <h3 class="counter" data-target="50000">0</h3>
-                    <p class="muted">Active Members</p>
+                    <p>Members</p>
                 </div>
+
                 <div class="stat">
-                    <i class="fas fa-globe-americas"></i>
+                    <i class="fas fa-globe"></i>
                     <h3 class="counter" data-target="120">0</h3>
-                    <p class="muted">Countries Reached</p>
+                    <p>Countries</p>
                 </div>
+
                 <div class="stat">
                     <i class="fas fa-recycle"></i>
                     <h3 class="counter" data-target="1500">0</h3>
-                    <p class="muted">Cleanup Projects</p>
+                    <p>Cleanup Projects</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- INITIATIVES -->
-    <section class="initiatives" id="initiatives">
+    <section id="initiatives">
         <div class="container">
             <div class="section-title">
                 <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
             </div>
+
             <div class="initiatives-grid">
-                <article class="card">
+                <div class="card">
                     <span class="tag">Reforestation</span>
-                    <div class="img-wrap">
-                        <img loading="lazy" src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
-                    </div>
+                    <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg">
                     <div class="content">
                         <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a class="btn" href="#">Learn More</a>
+                        <p>Planting trees worldwide to restore ecosystems.</p>
                     </div>
-                </article>
+                </div>
 
-                <article class="card">
+                <div class="card">
                     <span class="tag">Ocean</span>
-                    <div class="img-wrap">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&w=1600&q=60" alt="Ocean Conservation">
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&w=1600&q=60">
                     <div class="content">
                         <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a class="btn" href="#">Learn More</a>
+                        <p>Reducing marine pollution and protecting seas.</p>
                     </div>
-                </article>
+                </div>
 
-                <article class="card">
+                <div class="card">
                     <span class="tag">Energy</span>
-                    <div class="img-wrap">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1600&q=60" alt="Renewable Energy">
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1600&q=60">
                     <div class="content">
                         <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a class="btn" href="#">Learn More</a>
+                        <p>Promoting solar, wind and clean energy.</p>
                     </div>
-                </article>
+                </div>
             </div>
         </div>
     </section>
@@ -235,126 +413,81 @@
     <section class="cta" id="get-involved">
         <div class="container">
             <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a class="btn" href="#">Become a Member</a>
+            <p>Your participation creates real impact.</p>
+            <a class="btn">Become a Member</a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer id="contact">
-        <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:start">
+        <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem">
             <div>
                 <h3>Green Network</h3>
-                <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
-                <div style="display:flex;gap:.6rem;margin-top:.6rem">
-                    <a href="#" style="color:white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" style="color:white"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="color:white"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color:white"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <p>Committed to sustainable future.</p>
             </div>
+
             <div>
                 <h3>Quick Links</h3>
-                <ul style="list-style:none;margin-top:.6rem">
+                <ul style="list-style:none;margin-top:.5rem">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
+
             <div>
-                <h3>Our Programs</h3>
-                <ul style="list-style:none;margin-top:.6rem">
+                <h3>Programs</h3>
+                <ul style="list-style:none;margin-top:.5rem">
                     <li><a href="#">Reforestation</a></li>
                     <li><a href="#">Ocean Cleanup</a></li>
-                    <li><a href="#">Wildlife Protection</a></li>
-                    <li><a href="#">Climate Education</a></li>
-                    <li><a href="#">Sustainable Agriculture</a></li>
+                    <li><a href="#">Renewable Energy</a></li>
                 </ul>
             </div>
+
             <div>
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> New York</p>
                 <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
             </div>
         </div>
-        <div style="text-align:center;margin-top:1rem;color:rgba(255,255,255,0.6)">&copy; 2025 Green Network. All rights reserved.</div>
     </footer>
 
+    <!-- JS EFFECTS -->
     <script>
-        // Mobile menu
-        document.querySelector('.mobile-menu')?.addEventListener('click', function(){
-            document.querySelector('nav ul')?.classList.toggle('open');
+        // Parallax
+        const heroBg = document.getElementById("heroBg");
+        window.addEventListener("scroll", () => {
+            heroBg.style.transform = `translateY(${scrollY * 0.25}px)`;
         });
 
-        // Parallax hero depth (subtle): uses scroll position
-        const heroBg = document.getElementById('heroBg');
-        function onScroll(){
-            const scrolled = window.scrollY;
-            if(heroBg){
-                // subtle translate for parallax feel
-                heroBg.style.transform = `translateY(${scrolled * 0.2}px) scale(1.03)`;
-            }
-        }
-        window.addEventListener('scroll', onScroll, {passive:true});
+        // Counter
+        const counters = document.querySelectorAll(".counter");
+        const speed = 2000;
 
-        // Counter animation (optimized using requestAnimationFrame)
-        const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => {
-            const target = +counter.dataset.target;
-            let current = 0;
-            const duration = 1600; // ms
-            let start = null;
-            function step(timestamp){
-                if(!start) start = timestamp;
-                const progress = Math.min((timestamp - start) / duration, 1);
-                const eased = progress<.5 ? (2*progress*progress) : (-1 + (4 - 2*progress)*progress);
-                counter.innerText = Math.floor(eased * target);
-                if(progress < 1) window.requestAnimationFrame(step);
-                else counter.innerText = target.toLocaleString();
-            }
-            // Trigger when visible
-            function onVisibility(){
-                const rect = counter.getBoundingClientRect();
-                if(rect.top < window.innerHeight && rect.bottom >= 0){
-                    window.requestAnimationFrame(step);
-                    window.removeEventListener('scroll', onVisibility);
-                }
-            }
-            window.addEventListener('scroll', onVisibility, {passive:true});
-            onVisibility();
-        });
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const update = () => {
+                    const target = +counter.dataset.target;
+                    const count = +counter.innerText;
+                    const increment = target / speed;
 
-        // Initiative card parallax tilt (mouse) for non-touch
-        const cards = document.querySelectorAll('.card');
-        if(window.matchMedia('(pointer:fine)').matches){
-            cards.forEach(card => {
-                card.addEventListener('mousemove', e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left; // x position within the element.
-                    const y = e.clientY - rect.top;
-                    const cx = rect.width/2; const cy = rect.height/2;
-                    const dx = (x - cx) / cx; const dy = (y - cy) / cy;
-                    card.style.transform = `perspective(600px) rotateX(${(-dy*6)}deg) rotateY(${dx*6}deg) translateY(-8px)`;
-                });
-                card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment * 20);
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                update();
             });
-        }
+        };
 
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(a=>{
-            a.addEventListener('click', e=>{
-                const href = a.getAttribute('href');
-                if(href.length>1){
-                    e.preventDefault();
-                    const el = document.querySelector(href);
-                    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-                }
-            });
+        window.addEventListener("scroll", () => {
+            const stats = document.querySelector(".stats");
+            const pos = stats.getBoundingClientRect().top;
+            if (pos < window.innerHeight) animateCounters();
         });
-
     </script>
+
 </body>
 </html>
