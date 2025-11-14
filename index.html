@@ -1,94 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>紫色云端 · 个性化主题页</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>紫色云端 · 个性化主页</title>
     <style>
-        body {
+        :root {
+            --purple-light: #d8b4fe;
+            --purple: #a855f7;
+            --purple-dark: #7e22ce;
+            --bg: #faf5ff;
+            --white: #ffffff;
+            --text: #2d2d2d;
+            --glass: rgba(255,255,255,0.25);
+            --glass-border: rgba(255,255,255,0.4);
+        }
+
+        * {
             margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: linear-gradient(135deg, #f8f3ff, #ece0ff);
-            color: #3a2a4f;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            color: var(--text);
         }
 
         header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(135deg, #9c4dcc, #7c3aed, #c084fc);
+            background: linear-gradient(135deg, #c084fc, #a855f7, #7e22ce);
             color: white;
+            padding: 20px;
         }
 
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            text-shadow: 0 4px 30px rgba(255,255,255,0.35);
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.25);
         }
 
         header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
+            font-size: 1.4rem;
+            max-width: 600px;
         }
 
         section {
+            padding: 60px 20px;
             max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
+            margin: auto;
         }
 
         .card {
-            background: rgba(255,255,255,0.45);
-            backdrop-filter: blur(14px);
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.4);
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
-            font-size: 1.2rem;
-            line-height: 1.8;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(168,85,247,0.2);
+            margin: 20px 0;
         }
 
         footer {
             text-align: center;
             padding: 25px;
-            margin-top: 50px;
-            background: #4a148c;
+            background: var(--purple-dark);
             color: white;
-            font-size: 0.95rem;
+            margin-top: 40px;
         }
     </style>
 </head>
-
 <body>
-    <div style="background:red;color:white;padding:20px;font-size:30px;">TEST</div>
-    <header>
-        <h1>在紫色的云端，我写下属于自己的诗</h1>
-        <p>轻柔的风带来希望，光穿过云隙落在你身上。</p>
-    </header>
 
-    <section>
-        <div class="card">
-            在浅浅的紫色天光下，世界变得安静、柔软、温柔起来。
-            每一步落在地面上，都像在云端上轻轻印下一笔。
-        </div>
+<header>
+    <h1>在紫色的云端</h1>
+    <p>我写下属于自己的诗 · 在这里，世界因我而独特。</p>
+</header>
 
-        <div class="card">
-            如果你愿意停下来听一听，你会听到风穿过山谷的声音，
-            也会听到自己的心跳——那么清晰，那么真实。
-        </div>
+<section>
+    <div class="card">
+        <h2>💜 关于这个世界</h2>
+        <p>这里是一片柔光紫色的云端世界，每个人都可以在此书写自己的故事、放下束缚、表达真实的自我。</p>
+    </div>
 
-        <div class="card">
-            这不仅是一页网页，而是一段属于你的时光。
-            它可以是一首诗，也可以是一幅风景。
-            你看到什么，它便是什么。
-        </div>
-    </section>
+    <div class="card">
+        <h2>💜 我的风景</h2>
+        <p>你想放诗、想放心情、想放座右铭、想放介绍，都可以随时让我帮你改这里。</p>
+    </div>
 
-    <footer>
-        ✦ Purple Theme © 2025 · 个性化主题页 ✦
-    </footer>
+    <div class="card">
+        <h2>💜 自定义</h2>
+        <p>你可以告诉我任何你希望加入的内容：图片、图标、更多板块、个人语录、按钮、链接……我都能继续帮你做。</p>
+    </div>
+</section>
+
+<footer>
+    © 2025 · 紫色云端 · 专属于你的个性化主页
+</footer>
 
 </body>
 </html>
-
